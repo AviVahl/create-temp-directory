@@ -20,10 +20,10 @@ export interface ITempDirectory {
 }
 
 /**
- * Create an empty, unique directory in the current OS's temp directory,
- * and returns its absolute `path` and a `remove()` function.
+ * Create an empty, unique directory in the current OS's temp directory.
  *
  * @param prefix optional prefix to add to the random name. (default: "temp-")
+ * @returns an absolute `path` and a `remove()` function.
  */
 export async function createTempDirectory(prefix = 'temp-'): Promise<ITempDirectory> {
     const path = await mkdtemp(join(tmpdir(), prefix))

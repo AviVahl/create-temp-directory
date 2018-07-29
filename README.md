@@ -1,8 +1,8 @@
 # create-temp-directory
 [![npm version](https://badge.fury.io/js/create-temp-directory.svg)](https://www.npmjs.com/package/create-temp-directory)
 
-Create an empty, unique directory in the current OS's temp directory,
-and returns its absolute `path` and a `remove()` function. Useful for tests.
+Create an empty, unique directory in the current OS's temp directory.
+It returns an absolute `path` and a `remove()` function. Useful for tests.
 
 ## Getting started
 
