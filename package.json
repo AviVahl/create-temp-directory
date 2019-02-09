@@ -16,11 +16,12 @@
   "devDependencies": {
     "@types/node": "8",
     "@types/rimraf": "^2.0.2",
-    "typescript": "~3.3.1"
+    "typescript": "~3.3.3"
   },
   "files": [
     "cjs",
-    "src"
+    "src",
+    "!src/tsconfig.json"
   ],
   "engines": {
     "node": ">=8"
