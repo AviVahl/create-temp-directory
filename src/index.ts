@@ -1,1 +1,1 @@
-export { createTempDirectory, ITempDirectory } from './create-temp-directory'
+export { createTempDirectory, ITempDirectory } from './create-temp-directory';
