@@ -7,21 +7,20 @@
   "scripts": {
     "clean": "rimraf ./cjs",
     "prebuild": "yarn clean",
-    "build": "tsc -p src",
+    "build": "tsc",
     "prepack": "yarn build"
   },
   "dependencies": {
-    "rimraf": "^2.6.3"
+    "rimraf": "^3.0.0"
   },
   "devDependencies": {
     "@types/node": "8",
     "@types/rimraf": "^2.0.2",
-    "typescript": "~3.5.3"
+    "typescript": "~3.6.4"
   },
   "files": [
     "cjs",
-    "src",
-    "!src/tsconfig.json"
+    "src"
   ],
   "engines": {
     "node": ">=8"
