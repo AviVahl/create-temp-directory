@@ -1,7 +1,7 @@
 {
   "name": "create-temp-directory",
   "description": "Create an empty, unique directory in the current OS's temp directory",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "cjs/index.js",
   "types": "cjs/index.d.ts",
   "scripts": {
