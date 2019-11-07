@@ -15,8 +15,8 @@
   },
   "devDependencies": {
     "@types/node": "8",
-    "@types/rimraf": "^2.0.2",
-    "typescript": "~3.6.4"
+    "@types/rimraf": "^2.0.3",
+    "typescript": "~3.7.2"
   },
   "files": [
     "cjs",
