@@ -6,17 +6,17 @@
   "types": "cjs/index.d.ts",
   "scripts": {
     "clean": "rimraf ./cjs",
-    "prebuild": "yarn clean",
+    "prebuild": "npm run clean",
     "build": "tsc",
-    "prepack": "yarn build"
+    "prepack": "npm run build"
   },
   "dependencies": {
-    "rimraf": "^3.0.0"
+    "rimraf": "^3.0.2"
   },
   "devDependencies": {
     "@types/node": "8",
     "@types/rimraf": "^2.0.3",
-    "typescript": "~3.7.3"
+    "typescript": "~3.8.2"
   },
   "files": [
     "cjs",

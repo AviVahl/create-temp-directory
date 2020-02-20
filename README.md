@@ -8,7 +8,7 @@ It returns an absolute `path` and a `remove()` function. Useful for tests.
 
 Install the library as a `devDependency` in an existing project:
 ```
-yarn add create-temp-directory --dev
+npm i create-temp-directory --save-dev
 ```
 
 ## Example usage
