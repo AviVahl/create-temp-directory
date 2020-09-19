@@ -2,10 +2,10 @@
   "name": "create-temp-directory",
   "description": "Create an empty, unique directory in the current OS's temp directory",
   "version": "1.1.1",
-  "main": "cjs/index.js",
-  "types": "cjs/index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "clean": "rimraf ./cjs",
+    "clean": "rimraf ./dist",
     "prebuild": "npm run clean",
     "build": "tsc",
     "prepack": "npm run build"
@@ -19,7 +19,7 @@
     "typescript": "~4.0.3"
   },
   "files": [
-    "cjs",
+    "dist",
     "src"
   ],
   "engines": {
