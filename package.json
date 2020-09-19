@@ -14,7 +14,7 @@
     "rimraf": "^3.0.2"
   },
   "devDependencies": {
-    "@types/node": "8",
+    "@types/node": "10",
     "@types/rimraf": "^3.0.0",
     "typescript": "~4.0.3"
   },
@@ -23,7 +23,7 @@
     "src"
   ],
   "engines": {
-    "node": ">=8"
+    "node": ">=10"
   },
   "license": "MIT",
   "repository": "git@github.com:AviVahl/create-temp-directory.git"

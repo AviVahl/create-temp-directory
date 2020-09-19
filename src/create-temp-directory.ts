@@ -1,11 +1,10 @@
 import { tmpdir } from 'os';
 import { join } from 'path';
 import { promisify } from 'util';
-import { mkdtemp as mkdtempCb, mkdtempSync } from 'fs';
+import { mkdtempSync, promises as fsPromises } from 'fs';
 import rimrafCb from 'rimraf';
 
 const rimraf = promisify(rimrafCb);
-const mkdtemp = promisify(mkdtempCb);
 
 export interface ITempDirectory {
     /**
@@ -26,7 +25,7 @@ export interface ITempDirectory {
  * @returns an absolute `path` and a `remove()` function.
  */
 export async function createTempDirectory(prefix = 'temp-'): Promise<ITempDirectory> {
-    const path = await mkdtemp(join(tmpdir(), prefix));
+    const path = await fsPromises.mkdtemp(join(tmpdir(), prefix));
     const remove = () => rimraf(path);
 
     return { path, remove };
