@@ -8,6 +8,7 @@
     "clean": "rimraf ./dist",
     "prebuild": "npm run clean",
     "build": "tsc",
+    "test": "npm run build",
     "prepack": "npm run build"
   },
   "dependencies": {
@@ -16,7 +17,7 @@
   "devDependencies": {
     "@types/node": "10",
     "@types/rimraf": "^3.0.2",
-    "typescript": "~4.4.4"
+    "typescript": "~4.5.2"
   },
   "files": [
     "dist",
