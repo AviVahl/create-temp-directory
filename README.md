@@ -1,5 +1,6 @@
 # create-temp-directory
 [![npm version](https://badge.fury.io/js/create-temp-directory.svg)](https://www.npmjs.com/package/create-temp-directory)
+[![tests](https://github.com/AviVahl/create-temp-directory/actions/workflows/tests.yml/badge.svg)](https://github.com/AviVahl/create-temp-directory/actions/workflows/tests.yml)
 
 Create an empty, unique directory in the current OS's temp directory.
 It returns an absolute `path` and a `remove()` function. Useful for tests.
