@@ -1,10 +1,7 @@
 import { tmpdir } from 'os';
 import { join } from 'path';
-import { promisify } from 'util';
 import { mkdtempSync, realpathSync, promises as fsPromises } from 'fs';
-import rimrafCb from 'rimraf';
-
-const rimraf = promisify(rimrafCb);
+import rimraf from 'rimraf';
 
 export interface ITempDirectory {
     /**
@@ -51,7 +48,7 @@ export interface ITempDirectorySync {
  */
 export function createTempDirectorySync(prefix = 'temp-'): ITempDirectorySync {
     const path = mkdtempSync(join(tmpdir(), prefix));
-    const remove = () => rimrafCb.sync(path);
+    const remove = () => rimraf.sync(path);
 
     return { path: realpathSync(path), remove };
 }
