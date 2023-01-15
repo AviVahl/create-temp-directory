@@ -1,7 +1,6 @@
-import { tmpdir } from 'os';
-import { join } from 'path';
-import { mkdtempSync, realpathSync, promises as fsPromises } from 'fs';
-import rimraf from 'rimraf';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
+import { mkdtempSync, realpathSync, rmSync, promises as fsPromises } from 'node:fs';
 
 export interface ITempDirectory {
     /**
@@ -23,7 +22,7 @@ export interface ITempDirectory {
  */
 export async function createTempDirectory(prefix = 'temp-'): Promise<ITempDirectory> {
     const path = await fsPromises.mkdtemp(join(tmpdir(), prefix));
-    const remove = () => rimraf(path);
+    const remove = () => fsPromises.rm(path, {recursive: true, force: true});
 
     return { path: await fsPromises.realpath(path), remove };
 }
@@ -48,7 +47,7 @@ export interface ITempDirectorySync {
  */
 export function createTempDirectorySync(prefix = 'temp-'): ITempDirectorySync {
     const path = mkdtempSync(join(tmpdir(), prefix));
-    const remove = () => rimraf.sync(path);
+    const remove = () => rmSync(path, {recursive: true, force: true});
 
     return { path: realpathSync(path), remove };
 }
