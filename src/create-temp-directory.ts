@@ -21,10 +21,10 @@ export interface ITempDirectory {
  * @returns an absolute `path` and a `remove()` function.
  */
 export async function createTempDirectory(prefix = "temp-"): Promise<ITempDirectory> {
-  const path = await fsPromises.mkdtemp(join(tmpdir(), prefix));
+  const path = await fsPromises.realpath(await fsPromises.mkdtemp(join(tmpdir(), prefix)));
   const remove = () => fsPromises.rm(path, { recursive: true, force: true });
 
-  return { path: await fsPromises.realpath(path), remove };
+  return { path, remove };
 }
 
 export interface ITempDirectorySync {
@@ -46,8 +46,8 @@ export interface ITempDirectorySync {
  * @returns an absolute `path` and a `remove()` function.
  */
 export function createTempDirectorySync(prefix = "temp-"): ITempDirectorySync {
-  const path = mkdtempSync(join(tmpdir(), prefix));
+  const path = realpathSync(mkdtempSync(join(tmpdir(), prefix)));
   const remove = () => rmSync(path, { recursive: true, force: true });
 
-  return { path: realpathSync(path), remove };
+  return { path, remove };
 }
