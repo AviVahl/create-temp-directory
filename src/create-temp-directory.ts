@@ -46,7 +46,7 @@ export interface ITempDirectorySync {
  * @returns an absolute `path` and a `remove()` function.
  */
 export function createTempDirectorySync(prefix = "temp-"): ITempDirectorySync {
-  const path = realpathSync(mkdtempSync(join(tmpdir(), prefix)));
+  const path = realpathSync.native(mkdtempSync(join(tmpdir(), prefix)));
   const remove = () => rmSync(path, { recursive: true, force: true });
 
   return { path, remove };
