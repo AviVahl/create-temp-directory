@@ -15,7 +15,7 @@
   "devDependencies": {
     "@types/node": "18",
     "rimraf": "^5.0.5",
-    "typescript": "~5.4.2"
+    "typescript": "~5.4.3"
   },
   "files": [
     "dist",
