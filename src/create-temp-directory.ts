@@ -12,6 +12,12 @@ export interface ITempDirectory {
    * Remove the directory and all its contents.
    */
   remove(): Promise<void>;
+
+  /**
+   * Remove the directory and all its contents.
+   * This method is called when using the `using` statement with an instance of `ITempDirectory`.
+   */
+  [Symbol.asyncDispose](): Promise<void>;
 }
 
 /**
@@ -24,7 +30,7 @@ export async function createTempDirectory(prefix = "temp-"): Promise<ITempDirect
   const path = await fsPromises.realpath(await fsPromises.mkdtemp(join(tmpdir(), prefix)));
   const remove = () => fsPromises.rm(path, { recursive: true, force: true });
 
-  return { path, remove };
+  return { path, remove, [Symbol.asyncDispose]: remove };
 }
 
 export interface ITempDirectorySync {
@@ -37,6 +43,12 @@ export interface ITempDirectorySync {
    * Remove the directory and all its contents.
    */
   remove(): void;
+
+  /**
+   * Remove the directory and all its contents.
+   * This method is called when using the `using` statement with an instance of `ITempDirectorySync`.
+   */
+  [Symbol.dispose](): void;
 }
 
 /**
@@ -49,5 +61,5 @@ export function createTempDirectorySync(prefix = "temp-"): ITempDirectorySync {
   const path = realpathSync.native(mkdtempSync(join(tmpdir(), prefix)));
   const remove = () => rmSync(path, { recursive: true, force: true });
 
-  return { path, remove };
+  return { path, remove, [Symbol.dispose]: remove };
 }
