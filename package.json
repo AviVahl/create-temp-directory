@@ -14,7 +14,7 @@
   },
   "devDependencies": {
     "@types/node": "20",
-    "prettier": "^3.9.4",
+    "prettier": "^3.9.5",
     "typescript": "~7.0.2"
   },
   "files": [
