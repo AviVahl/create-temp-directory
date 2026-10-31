@@ -13,7 +13,7 @@
     "prepack": "npm run build"
   },
   "devDependencies": {
-    "@types/node": "20",
+    "@types/node": "22",
     "prettier": "^3.9.10",
     "typescript": "~7.0.2"
   },
@@ -22,7 +22,7 @@
     "src"
   ],
   "engines": {
-    "node": ">=20"
+    "node": ">=22"
   },
   "license": "MIT",
   "repository": "git@github.com:AviVahl/create-temp-directory.git"
